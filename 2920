@@ -1,0 +1,18 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main(){
+	int arr[8];
+	int inc_cnt = 0, dec_cnt = 0;
+	for (int i = 0; i < 8; i++)
+		scanf("%d", &arr[i]);
+	for (int i = 1; i < 8; i++) {
+		if (arr[i] > arr[i - 1]) inc_cnt++;
+		if (arr[i] < arr[i - 1]) dec_cnt++;
+	}
+	if (inc_cnt == 7) printf("ascending");
+	else if (dec_cnt==7) printf("descending");
+	else printf("mixed");
+	return 0;
+}
+
